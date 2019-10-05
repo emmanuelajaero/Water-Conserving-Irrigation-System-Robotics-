@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+   <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <style>
+.circlic-area{
+	padding-top: 30px;
+	padding-bottom: 30px;
+	display: flex;
+	justify-content: center;
+}
+
+.wrapper{
+	width: 300px;
+	height: 300px;
+	border: 1px solid #ccc;
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+}
+
+	.sector{
+		position: absolute;
+		transform-origin: 100% 100%;
+		background: #ccc;
+		width: 5000px;
+		height: 5000px;
+		left: 50%;
+		top: 50%;
+		border: 1px solid #999;
+		margin-top: -5000px;
+		margin-left: -5000px;
+   }
+
+
+   .circlic-area:hover{
+			background: #000;
+      }
+
+      </style>
+
+      <title>

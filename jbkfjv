@@ -1,0 +1,24 @@
+    
+def clockWise():
+    digitalWrite(stepperEnable, 0)
+    time.sleep(stepSpeed)
+    digitalWrite(directionPin, 0)
+    time.sleep(stepSpeed)
+    digitalWrite(stepPin, 1)
+    time.sleep(stepSpeed)
+    digitalWrite(stepPin, 0)
+    time.sleep(stepSpeed)
+    digitalWrite(stepperEnable, 1)
+
+   
+def antiClockWise():
+    digitalWrite(stepperEnable, 0)
+    time.sleep(stepSpeed)
+    digitalWrite(directionPin, 1)
+    time.sleep(stepSpeed)
+    digitalWrite(stepPin, 1)
+    time.sleep(stepSpeed)
+    digitalWrite(stepPin, 0)
+    time.sleep(stepSpeed)
+    digitalWrite(stepperEnable, 1)
+

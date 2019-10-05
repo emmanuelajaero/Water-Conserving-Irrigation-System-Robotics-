@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+   <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <style>
+.circlic-area{
+	padding-top: 30px;
+	padding-bottom: 30px;
+	display: flex;
+	justify-content: center;
+}
+
+.wrapper{
+	width: 300px;
+	height: 300px;
+	border: 1px solid #ccc;
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+}
+
+	.sector{
+		position: absolute;
+		transform-origin: 100% 100%;
+		background: #ccc;
+		width: 5000px;
+		height: 5000px;
+		left: 50%;
+		top: 50%;
+		border: 1px solid #999;
+		margin-top: -5000px;
+		margin-left: -5000px;
+   }
+
+
+   .circlic-area:hover{
+			background: #000;
+      }
+
+      </style>
+
+      <title>{{ title }}</title>
+   </head>
+   <body>
+      
+
+      <div class="container">
+            <div class="row">
+
+              <h2>The date and time on the server is: {{ time }}</h2>
+              <br>
+              <br>
+              <br>
+              <br>
+
+
+              <div class="col-sm-6">
+                <h3>Adjust The Stepper Position</h3>
+                <button id="Anti-Clock-Wise" type="button" class="btn btn-secondary">Anti-Clock</button>
+                <button id="Clock-Wise" type="button" class="btn btn-secondary">Clock-Wise</button>
+              </div>
+
+              <div class="col-sm-6">
+                <h3>Number Of Sensors</h3>
+                <form action="/" method="GET">
+                  <div class="form-group">
+                    <label for="sensors">Number of Sensors in Project</label>
+                    <input name="sensors" type="number" class="form-control" id="sensors">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+              </div>
+            </div>
+
+            <div class="row">
+               <div class="col-sm-12 d-flex justify-content-center mt-4 border">
+                  <br>
+                  <br>
+                  <br>
+
+                     <div class="wrapper mt-4">
+	                     <div class="sector circlic-area" style="transform: rotate(75deg) skew(60deg);"></div>
+	                     <div class="sector circlic-area" style="transform: rotate(105deg) skew(60deg);"></div>
+                        <div class="sector circlic-area" style="transform: rotate(135deg) skew(60deg);"></div>
+	                     <div class="sector circlic-area" style="transform: rotate(165deg) skew(60deg);"></div>
+	                     <div class="sector circlic-area" style="transform: rotate(195deg) skew(60deg);"></div>
+	                     <div class="sector circlic-area" style="transform: rotate(225deg) skew(60deg);"></div>
+	                     <div class="sector circlic-area" style="transform: rotate(255deg) skew(60deg);"></div>
+	                     <div class="sector circlic-area" style="transform: rotate(285deg) skew(60deg);"></div>
+	                     <div class="sector circlic-area" style="transform: rotate(315deg) skew(60deg);"></div>
+	                     <div class="sector circlic-area" style="transform: rotate(345deg) skew(60deg);"></div>
+	                     <div class="sector circlic-area" style="transform: rotate(375deg) skew(60deg);"></div>
+	                     <div class="sector circlic-area" style="transform: rotate(405deg) skew(60deg);"></div>
+                     </div>
+
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+
+               </div>
+            </div>
+      </div>
+
+
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
+      <script>
+          $("#Anti-Clock-Wise").click(function(){
+            $.get("/direction?direction=Anti-Clock-Wise", function(){
+              alert("you clicked Anti-Clock-Wise");
+            });
+          });
+
+
+          $("#Clock-Wise").click(function(){
+            $.get("/direction?direction=Clock-Wise", function(){
+              alert("you clicked Clock-Wise");
+            });            
+             alert("");
+          });
+       </script>
+
+
+    </body>
+</html>
